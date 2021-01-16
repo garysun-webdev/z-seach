@@ -1,10 +1,11 @@
 {
   "name": "z-search",
   "version": "1.0.0",
-  "description": "Node.js based search CLI",
+  "description": "Node.js based search CLI. Use inverted index as the way to search.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --silent",
+    "setup": "sudo npm i -g && z-search -h"
   },
   "keywords": [
     "cli",
@@ -20,7 +21,6 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^6.2.1",
-    "elasticlunr": "^0.9.5",
     "figlet": "^1.5.0",
     "lodash": "^4.17.20"
   },
