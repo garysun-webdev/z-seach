@@ -2,7 +2,7 @@
 
 A simple command line application to search the provided data and return the results in a human readable format.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenShot.png)
 
 ## Features
 
