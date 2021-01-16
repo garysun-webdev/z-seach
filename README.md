@@ -22,7 +22,7 @@ The architecture of the source code is shown as below.
 - index has the CLI interactive logic and interacts with both user and searcher
 - utils has some util functions serving searcher
 
-![Screenshot](architecture.png)
+![Architecture](architecture.png)
 
 ## Usage
 
