@@ -42,6 +42,7 @@ Run testing
 $ cd z-search
 $ npm i
 $ npm run test
+$ npm run coverage
 ```
 
 Run search:
