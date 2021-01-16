@@ -39,7 +39,7 @@ $ npm run setup
 Run testing
 
 ```sh
-$ cd search-cli
+$ cd z-search
 $ npm i
 $ npm run test
 ```
