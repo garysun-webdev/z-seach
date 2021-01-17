@@ -36,6 +36,12 @@ $ npm i
 $ npm run setup
 ```
 
+If `$npm run setup` fails, try this command below. It would ask you to type in Admin password to allow installing package globally in your system. (no harm, don't worry :))
+
+```sh
+$ npm run setup:sudo
+```
+
 Run testing
 
 ```sh

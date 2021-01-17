@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --silent",
     "coverage": "jest --silent --coverage",
-    "setup": "sudo npm i -g && z-search -h"
+    "setup": "npm i -g && z-search -h",
+    "setup:sudo": "sudo npm i -g && z-search -h"
   },
   "keywords": [
     "cli",
