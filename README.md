@@ -12,6 +12,30 @@ A simple command line application to search the provided data and return the res
 - Use inverted index to achieve O(1) search efficiency , which has good performance to handle large dataset.
 - Modulized and fully tested source code, which is easy to be extended.
 
+## Trade-off  
+  - Sacrifice space and init time to improve the runtime searching efficiency by generating two indexes for each table: 
+    - normal index: {id1: {key: value}}
+    - inverted index: {"key-value": [id1, id2]}
+  - When user searches for a value in a field, the system uses inverted index to find the ids first(O(1)), then use each id to retrieve the whole value(O(1)).
+  
+## Assumptions
+
+- The CLI gets params into `string`, so when generating inverted indexes, we use string lowercase as keys: {"key-value": [id1, id2]}. If the key points to array value, we interate the array to get the item as the value. e.g. {id1: {tag: [tag1,tag2]}} would be generated as {tag-tag1:[id1], tag-tag2:[id1]}. User should search for array item value to get the result instead of seaching for while array.
+
+correct: 
+```sh
+$ z-search -u -f tags -v "tag1"
+```
+
+incorrect:
+```sh
+$ z-search -u -f tags -v "[tag1,tag2]"
+```
+
+- one ticket can link to possible two users by `submitter_id` and `assignee_id`, and other entities are connected by `organization_id`.
+- The entity structure is decided by the first element in the table. E.g We use users[0] to decide all the fields in a user.
+
+
 ## Architecture
 
 The architecture of the source code is shown as below.
